@@ -1,0 +1,23 @@
+{
+  "name": "boilerplate_react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ryotarohada/boilerplate_react.git",
+  "author": "ryotarohada <ryotarohada@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "volta": {
+    "node": "14.18.0",
+    "yarn": "1.22.5"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^1.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.43.4",
+    "vite": "^2.6.14"
+  }
+}
