@@ -1,61 +1,19 @@
-# FA 自動連絡機能 フロントエンド
+# Boilerplate_Next
 
 ## 概要
-FASTALERTの自動連絡機能のフロントエンド
-
-## 監視
-- sentry（21/12/21時点、未導入）
-  - https://sentry.io/organizations/jxpress/issues/?project=1285461
-
-## 関連するサービス
-同リポジトリのGraphQLサーバーを立ち上げ、データを取得します。
-ルートディレクトリに移動し、以下コマンドでdockerコンテナを起動してください。
-
-```fish
-docker compose up -d scm-core
-```
-
-エンドポイント：`http://localhost:6060/query`
-
-## インフラ
-Vercel（予定）
-
-## 実行時に必要なソフトウェア等
-- [node@v14.17.1](https://nodejs.org/ja/download/)
-- [yarn@v1.22.5](https://yarnpkg.com/)
-
-パッケージ管理マネージャーは任意のもので構いませんが、設定ファイル統一の観点から以下パッケージを推奨します。
-
-[volta](https://volta.sh/)
+Next.jsのテンプレート
 
 ## 開発環境構築方法
 
-### フロント側
-#### 1. editorconfigが適用されるか確認する
-コーディングルールの統一化、コードの整形のために`editorconfig`、`ESLint`、`Prettier`を採用しています。
-
-VSCodeを使用している場合は、以下の拡張機能を導入してeditorconfigの設定を適用してください。
-
-[EditorConfig for VSCode](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-
-#### 2. 開発サーバー立ち上げ
+#### 1. 開発サーバー立ち上げ
 
 ```fish
 npm install or yarn install
 npm run dev or yarn dev
 ```
-`http://localhost:3000/`にて開発サーバーが起動します。
+`http://localhost:3000/`にて開発サーバー起動。
 
-#### 3. GraphQLサーバーの立ち上げ
-mainディレクトリに移動し、以下のdockerコマンドを実行。
-
-```fish
-docker compose up -d scm-core
-```
-
-`http://localhost:6060/query`をエンドポイントとしてGraphQLサーバーが起動します。
-
-#### 4. Storybookサーバーの立ち上げ
+#### 2. Storybookサーバーの立ち上げ
 
 ```fish
 npm run storybook
@@ -64,7 +22,7 @@ yarn storybook
 ```
 
 ### 本番ビルド、サーバーの立ち上げ
-以下コマンドで静的アセットを出力します。また、本番モードでアプリケーションを起動できます。
+以下コマンドで静的アセットを出力。また、本番モードでアプリケーション起動。
 
 ```fish
 npm run build
@@ -77,7 +35,7 @@ yarn start
 ```
 
 ### Tests
-JestとReact-Testing-Libraryでテストを行います。テストファイルを作成の上で以下コマンドを実行。
+JestとReact-Testing-Libraryでテストを行う。テストファイルを作成の上で以下コマンドを実行。
 
 ```fish
 npm run test
@@ -85,11 +43,10 @@ or
 yarn test
 ```
 
-snapshotテストを行なった場合は、実行されたtestファイルと同階層に`__snapshots__`ディレクトリが生成されます。
+snapshotテストを行なった場合は、実行されたtestファイルと同階層に`__snapshots__`ディレクトリが生成される。
 
 ### storiesファイルとtestファイルについて
-運用ルールとして対象のコンポーネントファイルと同階層に配置します。
-ファイルへのアクセスを迅速に行いたいためです。
+運用ルールとして対象のコンポーネントファイルと同階層に配置する。
 
 #### 例
 ```fish
@@ -101,7 +58,7 @@ Box/
 ```
 
 ### コンポーネントの分類について
-当アプリケーションのコンポーネントは以下の構造に分かれています。
+当アプリケーションのコンポーネントは以下の構造に分かれる。
 
 ```fish
 src/
@@ -116,7 +73,7 @@ src/
   :
 ```
 
-`domains`以下にドメインごとのディレクトリを作成します。
+`domains`以下にドメインごとのディレクトリを作成。
 
 ### npm scripts
 
@@ -168,7 +125,7 @@ storybookを静的サイトとして出力
 https://storybook.js.org/docs/react/api/cli-options#build-storybook
 
 ### 環境変数について
-next.config.js のenvオブジェクトに環境変数を記述します。
-また、`src/lib/env.ts`に環境変数をインポートして切り分けています。
+next.config.js のenvオブジェクトに環境変数を記述。
+`src/lib/env.ts`に環境変数をインポートして切り分けている。
 
 [Next.jsにおけるenvのベストプラクティス](https://zenn.dev/jj/articles/next-js-env-best-practice)
