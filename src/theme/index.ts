@@ -19,7 +19,7 @@ export const customTheme = extendTheme({
   },
   colors: {
     success: 'green',
-    error: 'red'
+    error: 'red',
   },
   space: genDefaultSpaceValues(DEFAULT_BACE_SPACE, DEFAULT_MAX_SPACE),
 });

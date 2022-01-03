@@ -20,5 +20,5 @@ export namespace Contexts {
     id: string;
     name: string;
     image: string;
-  }
+  };
 }
