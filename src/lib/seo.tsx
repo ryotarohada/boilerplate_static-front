@@ -2,15 +2,9 @@ import { DefaultSeo, NextSeo } from 'next-seo';
 import { DEFAULT_FRONTEND_ORIGIN } from './env';
 import { SEO } from '@/types';
 
-/** OG画像幅。Facebook推奨に合わせ1200 */
 const ogImageWidth = 1200;
-/** OG画像高さ。Facebook推奨に合わせ630 */
 const ogImageHeight = 630;
 
-/** デフォルトのSEO設定。
- * 必要な部分をページ毎で上書きして使用する
- * @see https://github.com/garmeeh/next-seo
- */
 const MyDefaultSeo = (): JSX.Element => {
   const siteName = '$site-name';
   const titleTemplate = `${siteName} | %s`;
@@ -36,9 +30,6 @@ const MyDefaultSeo = (): JSX.Element => {
   );
 };
 
-/**
- * SEOコンポーネントを返すHO関数
- */
 export const useSeo = (changeObj?: SEO.Change) => ({
   DefaultSeo: MyDefaultSeo,
   NextSeo: changeObj

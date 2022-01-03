@@ -15,9 +15,6 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "jsxImportSource": "@emotion/react",
-    "types": [
-      "@types/jest"
-    ],
     "paths": {
       "@/*": [
         "./*"

@@ -10,21 +10,15 @@ export namespace SEO {
 /**
  * アプリケーションの基本設定の型
  */
-export namespace Contexts {}
-
-/**
- * フロント表示確認用のcontexts
- */
-export namespace DevContexts {
+export namespace Contexts {
   export type PageData = {
     title: string;
     description: string;
     link: string;
   };
-}
-
-export type DevGraphQLQuery = {
-  facility: {
+  export type User = {
     id: string;
-  }[];
-};
+    name: string;
+    image: string;
+  }
+}

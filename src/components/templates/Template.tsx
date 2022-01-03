@@ -1,10 +1,9 @@
 import { SITE_NAME } from '@/lib/env';
-import { Header } from '../parts/Header/Header';
+import { chakra } from '@chakra-ui/react';
 
 /** ページテンプレート */
 export const Template: React.FC = ({ children }): JSX.Element => (
-  <div data-app-root>
-    <Header siteTitle={SITE_NAME} />
+  <chakra.div data-app-root>
     {children}
-  </div>
+  </chakra.div>
 );
