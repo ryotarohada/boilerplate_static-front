@@ -4,4 +4,4 @@ module.exports = {
     NEXT_PUBLIC_API_SERVER: 'http://localhost:3000',
     NEXT_PUBLIC_SITE_NAME: 'Boilerplate_Next',
   },
-};
+}

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 export namespace SEO {
   export type Change = {
-    title: string;
-    description: string;
-  };
+    title: string
+    description: string
+  }
 }
 
 /**
@@ -12,13 +12,13 @@ export namespace SEO {
  */
 export namespace Contexts {
   export type PageData = {
-    title: string;
-    description: string;
-    link: string;
-  };
+    title: string
+    description: string
+    link: string
+  }
   export type User = {
-    id: string;
-    name: string;
-    image: string;
-  };
+    id: string
+    name: string
+    image: string
+  }
 }

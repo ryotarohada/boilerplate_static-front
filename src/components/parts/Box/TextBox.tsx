@@ -1,8 +1,8 @@
-import { Box, BoxProps } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react'
 
 type Props = {
-  text: string;
-} & BoxProps;
+  text: string
+} & BoxProps
 
 export const TextBox: React.FC<Props> = ({
   text,
@@ -12,7 +12,13 @@ export const TextBox: React.FC<Props> = ({
   fontSize = '1.6rem',
   borderRadius = '10px',
 }) => (
-  <Box p={padding} m={margin} bg={backgroundColor} fontSize={fontSize} borderRadius={borderRadius}>
+  <Box
+    p={padding}
+    m={margin}
+    bg={backgroundColor}
+    fontSize={fontSize}
+    borderRadius={borderRadius}
+  >
     {text}
   </Box>
-);
+)

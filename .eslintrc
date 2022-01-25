@@ -3,31 +3,12 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
   "rules": {
-    "import/prefer-default-export": "off",
-    "import/extensions": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-    "max-lines": "error",
-    "max-depth": "error",
-    "max-lines-per-function": "error",
-    "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": ["**/*.test.{ts,tsx,js,jsx}", "**/*.spec.{ts,tsx,js,jsx}", "**/*.stories.{ts,tsx,js,jsx}"]
-      }
-    ]
-  },
-
-  "settings": {
-    "import/ignore": [".css$"]
+    "semi": ["error", "never", { "beforeStatementContinuationChars": "never" }],
+    "semi-spacing": ["error", { "after": true, "before": false }],
+    "semi-style": ["error", "first"],
+    "no-extra-semi": "error",
+    "no-unexpected-multiline": "error",
+    "no-unreachable": "error"
   }
 }
