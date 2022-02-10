@@ -1,5 +1,3 @@
-import React from 'react'
-
 export namespace SEO {
   export type Change = {
     title: string

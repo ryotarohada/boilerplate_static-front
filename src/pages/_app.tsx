@@ -1,18 +1,19 @@
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
-import { Global, css } from '@emotion/react'
-import { customTheme } from '@/theme'
+import { CacheProvider } from '@emotion/react'
+import createCache from '@emotion/cache'
+import { Head } from '@/lib/head'
+import { CustomThemeProvider } from '@/lib/theme'
 
-const globalStyle = css`
-  html {
-    font-size: 62.5%;
-  }
-`
+const emotionCache = createCache({ key: 'css', prepend: true })
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
-  <ChakraProvider resetCSS theme={customTheme}>
-    <Global styles={globalStyle} />
-    <Component {...pageProps} />
-  </ChakraProvider>
+  <CacheProvider value={emotionCache}>
+    <Head>
+      <meta name='viewport' content='initial-scale=1, width=device-width' />
+    </Head>
+    <CustomThemeProvider>
+      <Component {...pageProps} />
+    </CustomThemeProvider>
+  </CacheProvider>
 )
 export default MyApp

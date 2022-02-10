@@ -1,5 +1,5 @@
 import { DefaultSeo, NextSeo } from 'next-seo'
-import { DEFAULT_FRONTEND_ORIGIN } from './env'
+import { DEFAULT_FRONTEND_ORIGIN } from '../env'
 import { SEO } from '@/types'
 
 const ogImageWidth = 1200
