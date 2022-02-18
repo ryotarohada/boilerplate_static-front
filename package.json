@@ -13,8 +13,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "prettier": "prettier -w *.js '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore",
-    "prettier:check": "prettier -c '*.js' '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore",
-    "mock:rest": "node src/mocks/server.js"
+    "prettier:check": "prettier -c '*.js' '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore"
   },
   "dependencies": {
     "@apollo/client": "^3.5.9",
