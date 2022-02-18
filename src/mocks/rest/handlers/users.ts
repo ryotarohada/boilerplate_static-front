@@ -7,7 +7,7 @@ export type UsersResponse = {
 }
 
 export const userRestHandler = rest.get<UsersResponse>(
-  '/users',
+  '/api/users',
   (req, res, ctx) => {
     return res(
       ctx.json({

@@ -1,4 +1,10 @@
+import { Box, SxProps } from '@mui/material'
+
+const style: SxProps = {
+  p: 5,
+}
+
 /** ページテンプレート */
 export const Template: React.FC = ({ children }): JSX.Element => (
-  <div data-app-root>{children}</div>
+  <Box sx={style}>{children}</Box>
 )
