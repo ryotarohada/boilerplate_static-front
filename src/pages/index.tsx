@@ -1,11 +1,7 @@
 import type { NextPage } from 'next'
-import useSWR from 'swr'
-import { CircularProgress } from '@mui/material'
 import { Template } from '@/components/templates/Template'
 import { LinkButton } from '@/components/parts/LinkButton'
 import { useSeo } from '@/lib/seo'
-import { API_ENDPOINT } from '@/lib/env'
-import { UsersResponse } from '@/mocks/rest/handlers/users'
 import { UserLists } from '@/domains/UserLists'
 
 const Index: NextPage = () => {
