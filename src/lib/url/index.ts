@@ -1,8 +1,9 @@
-import { Contexts } from '@/types'
+type MyAppUrls = {
+  title: string
+  description: string
+  link: string
+}
 
-/**
- * アプリケーションの各ページの設定
- */
-export const myAppUrls: Contexts.PageData[] = [
+export const myAppUrls: MyAppUrls[] = [
   { title: 'Index', description: 'Indexの説明', link: '/' },
 ]

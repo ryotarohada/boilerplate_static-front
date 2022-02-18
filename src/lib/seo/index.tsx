@@ -1,6 +1,10 @@
 import { DefaultSeo, NextSeo } from 'next-seo'
 import { DEFAULT_FRONTEND_ORIGIN } from '../env'
-import { SEO } from '@/types'
+
+export type UseSeoOptions = {
+  title: string
+  description: string
+}
 
 const ogImageWidth = 1200
 const ogImageHeight = 630
@@ -37,11 +41,9 @@ const MyDefaultSeo = (): JSX.Element => {
   )
 }
 
-export const useSeo = (changeObj?: SEO.Change) => ({
+export const useSeo = (options?: UseSeoOptions) => ({
   DefaultSeo: MyDefaultSeo,
-  NextSeo: changeObj
-    ? () => (
-        <NextSeo title={changeObj.title} description={changeObj.description} />
-      )
+  NextSeo: options
+    ? () => <NextSeo title={options.title} description={options.description} />
     : () => <NextSeo />,
 })
