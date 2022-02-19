@@ -1,4 +1,4 @@
 {
-  "rootDir": "_tests/",
+  "rootDir": "src/components/parts/",
   "outExtensions": ["presenter"]
 }
