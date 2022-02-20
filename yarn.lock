@@ -119,6 +119,14 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
+"@component-builder/react@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@component-builder/react/-/react-0.0.1.tgz#d1f824f4f01a8abfaac65f7f804ed29dc46c767a"
+  integrity sha512-tGzrq1q7WByoJhFy3AiSzBG86ch+RCeinxKt/BDR8xZwXSe0BOr8aqDxqa3TdX4S1qy6TfZN6wBA5agznQDCEw==
+  dependencies:
+    commander "^9.0.0"
+    fs-extra "^10.0.0"
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz#33bf4b7b39c178821606f669bbc447a6a629786b"
@@ -531,14 +539,6 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
-
-"@ryotarohada/component-builder@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@ryotarohada/component-builder/-/component-builder-0.0.2.tgz#9712dbc7ccdbb6c97af5e25fc97705012b841503"
-  integrity sha512-I4ofIHXRMjlj9St+Vz20z9opqgfi1BQMAIZ/XNoxXHExxTM1wxEjIdMRbnG0n09jz6SjvTDXfT0LR393E+6Biw==
-  dependencies:
-    commander "^9.0.0"
-    fs-extra "^10.0.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"

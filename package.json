@@ -1,10 +1,17 @@
 {
   "name": "boilerplate_next",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Boilerplate_Next",
   "engines": {
     "node": ">=14.17.1",
     "yarn": ">=1.22.5"
+  },
+  "volta": {
+    "node": "14.17.1",
+    "yarn": "1.22.5"
+  },
+  "msw": {
+    "workerDirectory": "public"
   },
   "scripts": {
     "dev": "next dev",
@@ -32,7 +39,7 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
-    "@ryotarohada/component-builder": "^0.0.2",
+    "@component-builder/react": "^0.0.1",
     "@types/eslint": "^7.2.13",
     "@types/node": "^15.12.5",
     "@types/react": "17.0.11",
@@ -51,12 +58,5 @@
     "prettier": "^2.3.2",
     "ts-node": "^10.0.0",
     "typescript": "4.3.5"
-  },
-  "volta": {
-    "node": "14.17.1",
-    "yarn": "1.22.5"
-  },
-  "msw": {
-    "workerDirectory": "public"
   }
 }
