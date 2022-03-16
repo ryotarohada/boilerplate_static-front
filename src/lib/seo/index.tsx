@@ -1,5 +1,5 @@
 import { DefaultSeo, NextSeo } from 'next-seo'
-import { DEFAULT_FRONTEND_ORIGIN } from '../env'
+import { DEFAULT_FRONTEND_ORIGIN } from '../constants/env'
 
 export type UseSeoOptions = {
   title: string
