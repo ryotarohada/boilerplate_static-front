@@ -21,7 +21,10 @@
     "lint:fix": "next lint --fix",
     "prettier": "prettier -w *.js '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore",
     "prettier:check": "prettier -c '*.js' '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore",
-    "cb": "component-builder"
+    "analyze": "ANALYZE=true yarn build",
+    "cb": "component-builder",
+    "storybook": "start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@apollo/client": "^3.5.9",
@@ -39,12 +42,23 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.7",
     "@component-builder/react": "^0.0.1",
+    "@next/bundle-analyzer": "^12.1.0",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "@types/eslint": "^7.2.13",
     "@types/node": "^15.12.5",
     "@types/react": "17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
+    "babel-loader": "^8.2.3",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-next": "^11.0.1",
