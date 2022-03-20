@@ -14,7 +14,7 @@
     "workerDirectory": "public"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -23,7 +23,7 @@
     "prettier:check": "prettier -c '*.js' '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore",
     "analyze": "ANALYZE=true yarn build",
     "cb": "component-builder",
-    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook": "start-storybook -s ./public -p 6000",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

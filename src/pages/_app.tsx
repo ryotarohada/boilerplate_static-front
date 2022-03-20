@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import { Head } from '@/components/parts/head'
-import { CustomThemeProvider } from '@/theme'
+import { CustomThemeProvider } from '@/theme/provider'
 import { selectMockServer } from '@/lib/selectMockServer'
 
 const emotionCache = createCache({ key: 'css', prepend: true })
@@ -18,4 +18,5 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
     </CustomThemeProvider>
   </CacheProvider>
 )
+
 export default MyApp
