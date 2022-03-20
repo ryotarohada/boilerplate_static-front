@@ -4,8 +4,8 @@ import { createCustomPalette } from '@/theme/options/palette'
 import { customTypography } from '@/theme/options/typography'
 
 export const createAppThemeOptions = ({
-  prefersColorSchema,
+  displayMode,
 }: CustomThemeOptionsArg): ThemeOptions => ({
-  palette: createCustomPalette(prefersColorSchema),
+  palette: createCustomPalette(displayMode),
   typography: customTypography,
 })

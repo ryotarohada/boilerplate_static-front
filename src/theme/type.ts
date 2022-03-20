@@ -1,3 +1,3 @@
 export type CustomThemeOptionsArg = {
-  prefersColorSchema: boolean
+  displayMode: boolean
 }
