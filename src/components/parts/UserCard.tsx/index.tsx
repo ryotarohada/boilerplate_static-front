@@ -2,24 +2,32 @@ import {
   Card,
   CardContent,
   CardMedia,
+  CardProps,
   Stack,
   Typography,
-  SxProps,
 } from '@mui/material'
 
 type Props = {
   id: string
   image: string
   name: string
-}
+} & CardProps
 
-export const UserCard: React.FC<Props> = ({ id, image, name }) => {
-  const cardStyle: SxProps = { maxWidth: 350, padding: 3, borderRadius: 3 }
-  const cardMediaStyle: SxProps = { height: 250, borderRadius: 3 }
-
+export const UserCard: React.FC<Props> = ({
+  id,
+  image,
+  name,
+  sx = { maxWidth: 350, padding: 3, borderRadius: 3 },
+  ...cardRestProps
+}) => {
   return (
-    <Card sx={cardStyle}>
-      <CardMedia component='img' image={image} alt={name} sx={cardMediaStyle} />
+    <Card sx={sx} {...cardRestProps}>
+      <CardMedia
+        component='img'
+        image={image}
+        alt={name}
+        sx={{ height: 250, borderRadius: 3 }}
+      />
       <CardContent>
         <Stack spacing={1}>
           <Typography component='span'>{id}</Typography>

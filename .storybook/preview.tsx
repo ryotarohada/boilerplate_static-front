@@ -1,4 +1,4 @@
-import { CustomThemeProvider } from '../src/theme'
+import { CustomThemeProvider } from '../src/theme/provider'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

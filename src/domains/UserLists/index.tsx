@@ -1,20 +1,20 @@
-import useSWR from 'swr'
-import { UserListsSuccess } from '@/domains/UserLists/ShowSuccess'
-import { UserListsShowLoading } from '@/domains/UserLists/ShowLoading'
-import { UserListsShowError } from '@/domains/UserLists/ShowError'
-import { UsersResponse } from '@/mocks/rest/handlers/users'
-import { API_ENDPOINT } from '@/lib/constants/env'
+import { CircularProgress } from '@mui/material'
+import { UserCard } from '@/components/parts/UserCard.tsx'
+import type { User } from '@/types/api'
 
-type Props = {}
+type Props = {
+  users: User[] | undefined
+}
 
-export const UserLists: React.FC<Props> = () => {
-  const { data, error } = useSWR<UsersResponse>(`${API_ENDPOINT}/users`)
-
-  if (error) {
-    return <UserListsShowError />
+export const UserLists: React.FC<Props> = ({ users }) => {
+  if (!users) {
+    return <CircularProgress />
   }
-  if (!data) {
-    return <UserListsShowLoading />
-  }
-  return <UserListsSuccess users={data.users} />
+  return (
+    <>
+      {users.map((item) => (
+        <UserCard {...item} key={item.id} />
+      ))}
+    </>
+  )
 }
