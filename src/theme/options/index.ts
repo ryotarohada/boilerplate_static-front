@@ -1,11 +1,8 @@
 import { ThemeOptions } from '@mui/material'
-import { CustomThemeOptionsArg } from '@/theme/type'
-import { createCustomPalette } from '@/theme/options/palette'
+import { customBreakpoints } from '@/theme/options/breakPoints'
 import { customTypography } from '@/theme/options/typography'
 
-export const createAppThemeOptions = ({
-  displayMode,
-}: CustomThemeOptionsArg): ThemeOptions => ({
-  palette: createCustomPalette(displayMode),
+export const customThemeOptions: ThemeOptions = {
+  breakpoints: customBreakpoints,
   typography: customTypography,
-})
+}
