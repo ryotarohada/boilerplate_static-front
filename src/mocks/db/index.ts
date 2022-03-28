@@ -1,15 +1,28 @@
-import { User } from '@/types/api'
+import { Item } from '@/types/api'
 
 type MockDataBase = {
-  users: User[]
+  items: Item[]
 }
 
 export const mockDataBase: MockDataBase = {
-  users: [
+  items: [
     {
       id: '1',
-      name: 'Jesse Cash',
-      image: 'images/jesse-cash.png',
+      name: 'item_1',
+      price: 500,
+      quantity: 5,
+    },
+    {
+      id: '2',
+      name: 'item_1',
+      price: 1000,
+      quantity: 10,
+    },
+    {
+      id: '3',
+      name: 'item_3',
+      price: 10000,
+      quantity: 0,
     },
   ],
 }

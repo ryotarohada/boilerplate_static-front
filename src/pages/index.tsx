@@ -1,12 +1,11 @@
 import type { NextPage } from 'next'
-import useSWR from 'swr'
+import { Button, Typography } from '@mui/material'
+import { useCallback } from 'react'
 import { Template } from '@/components/templates/Template'
-import { LinkButton } from '@/components/parts/LinkButton'
 import { useSeo } from '@/lib/seo'
-import { UserLists } from '@/domains/UserLists'
-import { UsersResponse } from '@/mocks/rest/handlers/users'
-import { API_ENDPOINT } from '@/lib/constants/env'
+import { UserLists } from '@/domains/ItemList'
 import { CustomToast } from '@/components/parts/Toast'
+import { useFetchItems } from '@/services/items'
 
 const Index: NextPage = () => {
   const { DefaultSeo, NextSeo } = useSeo({
@@ -14,18 +13,21 @@ const Index: NextPage = () => {
     description: 'Indexの説明',
   })
 
-  const { data, error } = useSWR<UsersResponse>(`${API_ENDPOINT}/user`)
+  const { data, error, mutate } = useFetchItems()
+  const onMutate = useCallback(() => mutate(data), [data, mutate])
 
   return (
     <Template>
       <DefaultSeo />
       <NextSeo />
-      <h1>Hello, Boilerplate_Next!</h1>
-      <UserLists users={data?.users} />
+      <Typography component='h1'>Hello, Boilerplate_Next!</Typography>
+      <UserLists items={data?.items} />
       {error && (
         <CustomToast severity='error' message='通信エラーが発生しました' />
       )}
-      <LinkButton href='/foo'>ページ遷移</LinkButton>
+      <Button variant='contained' onClick={onMutate}>
+        update
+      </Button>
     </Template>
   )
 }

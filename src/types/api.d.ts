@@ -1,5 +1,7 @@
-export type User = {
+export type Item = {
   id: string
   name: string
-  image: string
+  price: number
+  quantity: number
 }
+export type ItemsResponse = { items: Item[] }
