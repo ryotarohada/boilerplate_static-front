@@ -1,7 +1,5 @@
 const path = require('path')
 
-const toPath = (_path) => path.join(process.cwd(), _path)
-
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -10,20 +8,22 @@ module.exports = {
     '@storybook/addon-interactions',
   ],
   framework: '@storybook/react',
-  typescript: { reactDocgen: false },
-  core: {
-    builder: 'webpack5',
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+    },
   },
   webpackFinal: async (config) => {
-    return {
-      ...config,
-      resolve: {
-        ...config.resolve,
-        alias: {
-          ...config.resolve.alias,
-          '@': toPath('src'),
-        },
-      },
+    // ...
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, '../src'),
     }
+    return config
   },
 }

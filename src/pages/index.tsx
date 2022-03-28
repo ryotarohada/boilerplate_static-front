@@ -23,7 +23,7 @@ const Index: NextPage = () => {
       <h1>Hello, Boilerplate_Next!</h1>
       <UserLists users={data?.users} />
       {error && (
-        <CustomToast severity='error'>通信エラーが発生しました</CustomToast>
+        <CustomToast severity='error' message='通信エラーが発生しました' />
       )}
       <LinkButton href='/foo'>ページ遷移</LinkButton>
     </Template>

@@ -1,25 +1,30 @@
 import { FC } from 'react'
-import { Alert, AlertProps, Slide } from '@mui/material'
+import { Alert, AlertProps, Box, Slide, SxProps } from '@mui/material'
 
-type Props = {} & AlertProps
+type Props = {
+  message: string
+} & AlertProps
+
+const alertWrapperSx: SxProps = {
+  width: '100vw',
+  maxWidth: 400,
+  px: 2,
+  position: 'absolute',
+  bottom: 20,
+  left: 0,
+  right: 0,
+  margin: 'auto',
+}
 
 export const CustomToast: FC<Props> = ({
-  children = 'テキストを入れてください',
-  sx = {
-    maxWidth: 350,
-    position: 'absolute',
-    bottom: 20,
-    left: 0,
-    right: 0,
-    margin: 'auto',
-  },
+  message = 'テキストを入れてください',
   ...alertRestProps
 }) => {
   return (
     <Slide in direction='up'>
-      <Alert sx={sx} {...alertRestProps}>
-        {children}
-      </Alert>
+      <Box sx={alertWrapperSx}>
+        <Alert {...alertRestProps}>{message}</Alert>
+      </Box>
     </Slide>
   )
 }

@@ -23,7 +23,7 @@
     "prettier:check": "prettier -c '*.js' '**/*.{js,ts,tsx,css}' --ignore-path .prettierignore",
     "analyze": "ANALYZE=true yarn build",
     "cb": "component-builder",
-    "storybook": "start-storybook -s ./public -p 6000",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
