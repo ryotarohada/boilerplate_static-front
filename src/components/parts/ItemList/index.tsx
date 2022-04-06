@@ -11,7 +11,7 @@ export const ItemList: React.FC<Props> = ({ items }) => {
     return <Spinner />
   }
   return (
-    <HStack spacing={5} my={5}>
+    <HStack spacing={16} my={32}>
       {items.map((item) => (
         <ItemCard {...item} key={item.id} />
       ))}

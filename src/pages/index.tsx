@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useCallback } from 'react'
 import { Heading, Button, useToast } from '@chakra-ui/react'
-import { Template } from '@/components/templates/Template'
+import { Template } from '@/components/templates'
 import { ItemList } from '@/components/parts/ItemList'
 import { useFetchItems } from '@/services'
 import { useSeo } from '@/lib/seo'

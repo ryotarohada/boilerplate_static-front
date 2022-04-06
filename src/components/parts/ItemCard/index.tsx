@@ -10,13 +10,13 @@ export const ItemCard: React.FC<Props> = ({
   price,
   quantity,
   maxW = 350,
-  p = 3,
-  borderRadius = 3,
+  p = 16,
+  borderRadius = 1,
   ...rest
 }) => {
   return (
     <Box maxW={maxW} p={p} borderRadius={borderRadius} {...rest}>
-      <Stack spacing={1}>
+      <Stack spacing={8}>
         <Text as='span'>Item ID : {id}</Text>
         <Text as='span'>Item Name : {name}</Text>
         <Text as='span'>Item Price : {price}</Text>
