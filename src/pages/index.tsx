@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
-import { Button, Typography } from '@mui/material'
 import { useCallback } from 'react'
+import { Heading, Button, useToast } from '@chakra-ui/react'
 import { Template } from '@/components/templates/Template'
 import { useSeo } from '@/lib/seo'
-import { UserLists } from '@/domains/ItemList'
-import { CustomToast } from '@/components/parts/Toast'
+import { ItemList } from '@/components/parts/ItemList'
 import { useFetchItems } from '@/services/items'
 
 const Index: NextPage = () => {
@@ -16,15 +15,22 @@ const Index: NextPage = () => {
   const { data, error, mutate } = useFetchItems()
   const onMutate = useCallback(() => mutate(data), [data, mutate])
 
+  const toast = useToast()
+
   return (
     <Template>
       <DefaultSeo />
       <NextSeo />
-      <Typography component='h1'>Hello, Boilerplate_Next!</Typography>
-      <UserLists items={data?.items} />
-      {error && (
-        <CustomToast severity='error' message='通信エラーが発生しました' />
-      )}
+      <Heading as='h1'>Hello, Boilerplate_Next!</Heading>
+      <ItemList items={data?.items} />
+      {error &&
+        toast({
+          title: 'Error!',
+          description: '通信エラーが発生しました',
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        })}
       <Button variant='contained' onClick={onMutate}>
         update
       </Button>

@@ -1,10 +1,14 @@
-import { Box, SxProps } from '@mui/material'
+import { Box, BoxProps } from '@chakra-ui/react'
 
-const style: SxProps = {
-  p: 5,
-}
+type Props = {} & BoxProps
 
 /** ページテンプレート */
-export const Template: React.FC = ({ children }): JSX.Element => (
-  <Box sx={style}>{children}</Box>
+export const Template: React.FC<Props> = ({
+  children,
+  p = 5,
+  ...rest
+}): JSX.Element => (
+  <Box p={p} {...rest}>
+    {children}
+  </Box>
 )

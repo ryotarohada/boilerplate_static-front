@@ -1,26 +1,27 @@
-import { Card, CardContent, CardProps, Stack, Typography } from '@mui/material'
+import { Box, Text, Stack } from '@chakra-ui/react'
+import type { BoxProps } from '@chakra-ui/react'
 import { Item } from '@/types/api'
 
-type Props = {} & Item & CardProps
+type Props = {} & Item & BoxProps
 
 export const ItemCard: React.FC<Props> = ({
   id,
   name,
   price,
   quantity,
-  sx = { maxWidth: 350, padding: 3, borderRadius: 3 },
-  ...cardRestProps
+  maxW = 350,
+  p = 3,
+  borderRadius = 3,
+  ...rest
 }) => {
   return (
-    <Card sx={sx} {...cardRestProps}>
-      <CardContent>
-        <Stack spacing={1}>
-          <Typography component='span'>Item ID : {id}</Typography>
-          <Typography component='span'>Item Name : {name}</Typography>
-          <Typography component='span'>Item Price : {price}</Typography>
-          <Typography component='span'>Item quantity : {quantity}</Typography>
-        </Stack>
-      </CardContent>
-    </Card>
+    <Box maxW={maxW} p={p} borderRadius={borderRadius} {...rest}>
+      <Stack spacing={1}>
+        <Text as='span'>Item ID : {id}</Text>
+        <Text as='span'>Item Name : {name}</Text>
+        <Text as='span'>Item Price : {price}</Text>
+        <Text as='span'>Item quantity : {quantity}</Text>
+      </Stack>
+    </Box>
   )
 }

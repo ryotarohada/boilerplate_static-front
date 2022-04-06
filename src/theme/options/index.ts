@@ -1,8 +1,5 @@
-import { ThemeOptions } from '@mui/material'
-import { customBreakpoints } from '@/theme/options/breakPoints'
-import { customTypography } from '@/theme/options/typography'
-
-export const customThemeOptions: ThemeOptions = {
-  breakpoints: customBreakpoints,
-  typography: customTypography,
-}
+export { customComponentsOptions } from '@/theme/options/components'
+export { customColorMode } from '@/theme/options/mode'
+export { customColorsOptions } from '@/theme/options/colors'
+export { customFontsOptions } from '@/theme/options/fonts'
+export { customSpaceOptions } from '@/theme/options/space'

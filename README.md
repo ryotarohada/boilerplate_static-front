@@ -36,51 +36,50 @@ src/
   ├ components/
   │  ├ parts/
   │  └ templates/
-  ├ domains/
-  │  └ UserLists/
   ├ lib/
-  │  ├ env/ (環境変数)
-  │  ├ head/ (カスタムのNext/head)
+  │  ├ constants/ (定数ファイルなど)
+  │  │  ├ env/ (環境変数)
+  │  │  └ url/ (アプリケーションのURLを指定)
   │  ├ selectMockServer/ (モックサーバーを起動させる関数を記述)
-  │  ├ seo/ (meta系)
-  │  ├ theme/ (MaterialUIのテーマ)
-  │  └ url (アプリケーションのURLを指定)
+  │  └ seo/ (meta系)
   ├ mocks/
   │  ├ db/
   │  ├ graphql/ (未実装なので使えない)
   │  └ rest/
   ├ pages/
+  │  ├ _document.tsx
   │  ├ _app.tsx
-  │  └ index.tsx (ルートページ)
+  │  └ index.tsx
+  ├ services/（データフェッチ関連の関数）
+  │  └ items/
+  ├ theme/ (Chakra UIのカスタムテーマ)
   ├ types/
-  │  ├ global.d.ts
-  │  └ api.d.ts
+  │  ├ api.d.ts
+  │  └ global.d.ts
   :
 ```
 
 ### カスタムテーマについて
 
-MUI のカスタムテーマ機能を使用し、独自の設定を行なっています。
+Chakra UI のカスタムテーマ機能を使用し、独自の設定を行なっています。
 
 対象のソースコードは`/src/theme`を参照ください。
 
 #### provider
 
-`/src/theme/provider`からカスタムテーマを設定するための provider コンポーネントを提供しています。
+カスタムテーマを設定するための provider コンポーネントを提供しています。
 
-`/src/pages/_app.tsx`に記述することでアプリケーション全体、コンポーネントに記述することで単体でテーマを設定できます。
-
-また、`CssBaseline`を使用してスタイルのリセットを行なっています。
+テーマオプションをラップしているのでコンポーネントをそのまま記述することでテーマを設定できます。
 
 #### options
 
-mui の提供する theme 関数の引数に渡すオプションを生成します。
+Chakra UI の theme 関数の引数に渡すオプションを提供します。
 
-### prefers-color-scheme
+### colorModeScript
 
-prefers-color-scheme を使用し、ユーザーのディスプレイモード（light or dark）の設定を反映するようになっています。
+colorModeScript をラップしたプロバイダーを提供します。
 
-不要な場合は該当のソースコードを削除してください。
+colorMode の設定ファイルは`theme/options/mode`を参照してください。
 
 ### モックサーバーについて
 
